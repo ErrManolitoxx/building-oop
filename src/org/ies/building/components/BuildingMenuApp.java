@@ -36,27 +36,28 @@ public class BuildingMenuApp {
 
     private void option4(Building building) {
         System.out.println("Introduce una planta");
-        int plant = scanner.nextInt();
+        int floor = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Introduce una puerta");
         String door = scanner.nextLine();
-        building.findAparment(door, plant);
+        var apartment = building.findApartment(floor, door);
+        apartment.showInfo();
     }
 
     private void option3(Building building) {
         System.out.println("Introduce una planta");
-        int plant = scanner.nextInt();
+        int floor = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Introduce una puerta");
         String door = scanner.nextLine();
-        building.findOwners(plant, door);
+        building.showOwner(floor, door);
     }
 
     private void option2(Building building) {
         System.out.println("Introduce una planta");
         int floor = scanner.nextInt();
         scanner.nextLine();
-        building.showFloorAparments(floor);
+        building.showFloorApartments(floor);
     }
 
     private int chooseOption() {
