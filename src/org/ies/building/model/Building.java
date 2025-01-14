@@ -14,6 +14,24 @@ public class Building {
         this.apartments = apartments;
     }
 
+    public void showOwner(int floor, String door) {
+        var apartment = findApartment(floor, door);
+        if (apartment != null) {
+            for (var owner : apartment.getOwners()) {
+                owner.showInfo();
+            }
+        } else {
+            System.out.println("No se encuetra el apartamento");
+        }
+    }
+
+    public void showInfo() {
+        System.out.println("Direccion: " + address + ", " + city);
+        for (var apartement : apartments) {
+            apartement.showInfo();
+        }
+    }
+
     public Apartment findApartment(int floor, String door) {
         for (var apartment : apartments) {
             if (apartment.getFloor() == floor && apartment.getDoor().equals(door)) {
