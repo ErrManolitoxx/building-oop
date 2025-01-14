@@ -7,7 +7,7 @@ import org.ies.building.components.OwnerReader;
 
 import java.util.Scanner;
 
-public class Main {
+public class BuildingApp1Main {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
         var ownerReader = new OwnerReader(scanner);
